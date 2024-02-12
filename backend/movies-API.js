@@ -1193,13 +1193,31 @@ const movies = [
   }
 ]
 const port = 3700
+const pageSize = 10
 
-app.get('/', (req, res) => {
-  res.status(200).json("Welcome to the movies API by Adrian")
-})
+// Middleware to set CORS headers
+app.use((req, res, next) => {
+  res.setHeader('Access-Control-Allow-Origin', 'http://localhost:5173'); // Replace with your frontend URL
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+  next();
+});
 
 app.get('/movies', (req, res) => {
-  res.status(200).json(movies)
+  const page = parseInt(req.query.page) || 1
+  const startIndex = (page - 1) * pageSize
+  const endIndex = startIndex + pageSize
+  const paginatedMovies = movies.slice(startIndex, endIndex)
+
+  if (!req.query.page) {
+    res.status(200).json(movies)
+  } else {
+    res.status(200).json({
+      page: page,
+      totalPages: Math.ceil(movies.length / pageSize),
+      movies: paginatedMovies
+    })
+  }
 })
 
 app.listen(port, () => {
