@@ -1,4 +1,5 @@
 import React from "react";
+import Rates from "./Rates";
 
 const Filter = () => {
   return (
@@ -13,9 +14,12 @@ const Filter = () => {
           Search
         </button>
       </div>
-      <button className="bg-blue-500 py-2 md:py-3 rounded-full w-3/5 md:w-80 text-white">
-        Filter by rates
-      </button>
+      <div>
+        <button className="bg-blue-500 py-2 md:py-3 rounded-full w-3/5 md:w-80 text-white">
+          Filter by rates
+        </button>
+        <Rates/>
+      </div>
     </div>
   );
 };

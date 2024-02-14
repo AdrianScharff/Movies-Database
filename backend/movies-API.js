@@ -1192,8 +1192,6 @@ const movies = [
     "vote_count": 81
   }
 ]
-const port = 3700
-const pageSize = 10
 
 // Middleware to set CORS headers
 app.use((req, res, next) => {
@@ -1203,8 +1201,20 @@ app.use((req, res, next) => {
   next();
 });
 
+app.get('/movies/:id', (req, res) => {
+  const movieId = parseInt(req.params.id)
+  const movie = movies.find(movie => movie.id === movieId)
+
+  if (!movie) {
+    res.status(404).json({ error: 'Movie not found' })
+  } else {
+    res.status(200).json(movie)
+  }
+})
+
 app.get('/movies', (req, res) => {
   const page = parseInt(req.query.page) || 1
+  const pageSize = 10
   const startIndex = (page - 1) * pageSize
   const endIndex = startIndex + pageSize
   const paginatedMovies = movies.slice(startIndex, endIndex)
@@ -1220,6 +1230,7 @@ app.get('/movies', (req, res) => {
   }
 })
 
+const port = 3700
 app.listen(port, () => {
   console.log(`Server running on http://localhost:${port}`)
 })

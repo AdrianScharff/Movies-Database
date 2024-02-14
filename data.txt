@@ -1,5 +1,8 @@
 https://image.tmdb.org/t/p/w500
 
+https://api.themoviedb.org/3/discover/movie?api_key=521f52f42cb26522eca794007bf7aa3d
+
+
 {
   "page": 1,
   "results": [

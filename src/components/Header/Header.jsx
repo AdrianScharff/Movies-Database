@@ -27,13 +27,31 @@ const Header = () => {
           } md:block absolute md:static top-[95px] right-0 bg-black w-5/12 md:w-fit justify-center`}
         >
           <div className="flex flex-col md:flex-row pb-7 md:p-0 gap-5 md:gap-24">
-            <NavLink to="/" className={({isActive}) => isActive ? "text-orange-400": "text-white"} >
+            <NavLink
+              to="/"
+              className={({ isActive }) =>
+                isActive ? "text-orange-400" : "text-white"
+              }
+              onClick={toggleMenu}
+            >
               <h4>Home</h4>
             </NavLink>
-            <NavLink to="/about" className={({isActive}) => isActive ? "text-orange-400": "text-white"} >
+            <NavLink
+              to="/about"
+              className={({ isActive }) =>
+                isActive ? "text-orange-400" : "text-white"
+              }
+              onClick={toggleMenu}
+            >
               <h4>About</h4>
             </NavLink>
-            <NavLink to="/contact" className={({isActive}) => isActive ? "text-orange-400": "text-white"} >
+            <NavLink
+              to="/contact"
+              className={({ isActive }) =>
+                isActive ? "text-orange-400" : "text-white"
+              }
+              onClick={toggleMenu}
+            >
               <h4>Contact</h4>
             </NavLink>
           </div>
