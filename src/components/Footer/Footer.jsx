@@ -10,7 +10,7 @@ import {
 const Footer = () => {
   return (
     <div className="flex flex-col gap-3 py-4 text-[11px]">
-      <hr className="bg-slate-200 md:w-screen" />
+      <hr className="bg-slate-200" />
       <div className="px-5 md:px-24 flex flex-col md:items-center gap-3">
         <div className="text-xs md:w-96">
           <p>

@@ -1,15 +1,33 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars, faX } from "@fortawesome/free-solid-svg-icons";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { Link, NavLink } from "react-router-dom";
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const navBarRef = useRef(null);
+  const barsRef = useRef(null);
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
+
+  const handleMenuOpen = (event) => {
+    if (
+      navBarRef.current?.contains(event.target) === false &&
+      barsRef.current?.contains(event.target) === false
+    ) {
+      setMenuOpen(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("click", handleMenuOpen);
+    return () => {
+      document.removeEventListener("click", handleMenuOpen);
+    };
+  }, []);
 
   return (
     <header className="fixed w-full shadow-md bg-black top-0 z-[20]">
@@ -25,6 +43,7 @@ const Header = () => {
           className={`${
             menuOpen ? "flex" : "hidden"
           } md:block absolute md:static top-[95px] right-0 bg-black w-5/12 md:w-fit justify-center`}
+          ref={navBarRef}
         >
           <div className="flex flex-col md:flex-row pb-7 md:p-0 gap-5 md:gap-24">
             <NavLink
@@ -56,12 +75,8 @@ const Header = () => {
             </NavLink>
           </div>
         </nav>
-        <div className="md:hidden" onClick={toggleMenu}>
-          {menuOpen ? (
-            <FontAwesomeIcon icon={faX} className="text-white text-2xl" />
-          ) : (
-            <FontAwesomeIcon icon={faBars} className="text-white text-4xl" />
-          )}
+        <div className="md:hidden" onClick={toggleMenu} ref={barsRef}>
+          <FontAwesomeIcon icon={faBars} className="text-white text-4xl" />
         </div>
       </div>
     </header>

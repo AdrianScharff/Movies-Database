@@ -12,14 +12,11 @@ const MovieCard = ({ id, title, image, voteAverage }) => {
       <div className="grid grid-rows-[repeat(3, 1fr)] h-[8.5rem] md:h-[8rem] w-full text-[18px] md:text-[14px] text-center md:py-3 px-7 md:px-0">
         <p className="font-semibold">{title}</p>
         <p className="flex flex-col justify-center">{voteAverage}</p>
-        <NavLink
-          to={`movie/${id}`}
-          className="flex flex-col justify-end items-center"
-        >
+        <div className="flex flex-col justify-end items-center">
           <button className="py-1 px-2 rounded-lg bg-orange-400 hover:bg-orange-200 w-fit">
-            See details
+            <NavLink to={`movie/${id}`}>See details</NavLink>
           </button>
-        </NavLink>
+        </div>
       </div>
     </div>
   );
