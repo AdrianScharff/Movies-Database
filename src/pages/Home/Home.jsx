@@ -1,16 +1,20 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useState, useRef } from "react";
 import Filter from "./Filter";
-import { fetchMoviesByRate } from "../../services/moviesServices";
 import MoviesContainer from "../../components/MoviesContainer/MoviesContainer";
 import MovieCard from "../../components/MovieCard/MovieCard";
+import {
+  fetchMoviesByRate,
+  fetchMoviesBySearch,
+} from "../../services/moviesServices";
 import RatesContext from "../../contexts/RatesContext";
+import SearchContext from "../../contexts/SearchContext";
 
 const Home = () => {
   const [movies, setMovies] = useState([]);
-
   const { selectedRate } = useContext(RatesContext);
+  const { textSubmitted } = useContext(SearchContext);
 
-  const getMoviesData = async (rateOrNull) => {
+  const getMoviesByRate = async (rateOrNull) => {
     try {
       const fetchedMovies = await fetchMoviesByRate(rateOrNull);
       setMovies(fetchedMovies);
@@ -19,9 +23,24 @@ const Home = () => {
     }
   };
 
+  const getMoviesBySearch = async (word) => {
+    try {
+      const fetchedMovies = await fetchMoviesBySearch(word);
+      setMovies(fetchedMovies);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   useEffect(() => {
-    getMoviesData(selectedRate);
+    getMoviesByRate(selectedRate);
   }, [selectedRate]);
+
+  useEffect(() => {
+    if (textSubmitted !== "") {
+      getMoviesBySearch(textSubmitted);
+    }
+  }, [textSubmitted]);
 
   return (
     <>

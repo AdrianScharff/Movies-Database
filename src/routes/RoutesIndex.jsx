@@ -6,6 +6,7 @@ import Home from "../pages/Home/Home";
 import About from "../pages/About/About";
 import Contact from "../pages/Contact/Contact";
 import MovieDetail from "../pages/MovieDetail/MovieDetail";
+import Error404 from "../pages/Error404/Error404";
 
 const Router = () => (
   <Routes>
@@ -18,11 +19,11 @@ const Router = () => (
 
       <Route path="contact" element={<Contact />} />
 
-      <Route path="movie/" element={<MovieDetail/>}>
-        <Route path=":id" element={<MovieDetail/>}/>
+      <Route path="movie/" element={<MovieDetail />}>
+        <Route path=":id" element={<MovieDetail />} />
       </Route>
 
-      <Route path="*" element={<div className="mt-[96px]">Not found</div>} />
+      <Route path="*" element={<Error404 />} />
     </Route>
   </Routes>
 );

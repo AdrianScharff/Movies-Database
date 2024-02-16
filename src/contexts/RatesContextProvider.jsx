@@ -7,7 +7,9 @@ const RatesContextProvider = ({ children }) => {
   const [showRates, setShowRates] = useState(false);
 
   return (
-    <RatesContext.Provider value={{ selectedRate, setSelectedRate, showRates, setShowRates }}>
+    <RatesContext.Provider
+      value={{ selectedRate, setSelectedRate, showRates, setShowRates }}
+    >
       {children}
     </RatesContext.Provider>
   );
