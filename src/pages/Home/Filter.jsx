@@ -1,18 +1,18 @@
 import { useState, useRef, useEffect, useContext } from "react";
 import Rates from "./Rates";
+import { useNavigate } from "react-router-dom";
 import RatesContext from "../../contexts/RatesContext";
-import SearchContext from "../../contexts/SearchContext";
 
 const Filter = () => {
   const refForRates = useRef(null);
   const refFilterButton = useRef(null);
   const { showRates, setShowRates } = useContext(RatesContext);
   const [text, setText] = useState("");
-  const { setTextSubmitted } = useContext(SearchContext);
+  const navigate = useNavigate();
 
   const handleMovieSearch = (e) => {
     e.preventDefault();
-    setTextSubmitted(text);
+    navigate(`/moviesbysearch/${text}`);
   };
 
   const toggleRates = () => {
@@ -36,26 +36,23 @@ const Filter = () => {
   }, []);
 
   return (
-    <div className="bg-red-500 flex flex-col gap-2 md:gap-8 items-center p-5 md:pl-20 md:flex-row mt-[96px]">
-      <form
-        className="flex bg-yellow-400 w-fit"
-        onSubmit={handleMovieSearch}
-      >
+    <div className="flex flex-col gap-2 md:gap-8 items-center pt-7 md:pl-20 md:flex-row mt-[96px]">
+      <form className="flex w-fit" onSubmit={handleMovieSearch}>
         <input
           type="text"
-          className="border w-5/6 md:w-96 py-2 md:py-3 rounded-l-full ps-4"
+          className="border-y-2 border-s-2 border-black w-5/6 md:w-96 py-2 md:py-3 rounded-l-full ps-4"
           placeholder="Search movie"
           value={text}
           onChange={(e) => setText(e.target.value)}
         />
-        <button className="bg-blue-500 p-2 pr-4 rounded-r-full text-white">
+        <button className="border-2 border-black bg-black hover:bg-orange-400 hover:border-black hover:border-s-orange-400 p-2 pr-4 md:py-3 rounded-r-full text-white">
           Search
         </button>
       </form>
-      <div className="bg-yellow-200 flex flex-col items-center relative">
+      <div className="flex flex-col items-center relative">
         <button
           onClick={toggleRates}
-          className="bg-blue-500 py-2 px-12 md:py-3 rounded-full md:w-80 text-white"
+          className="border-2 border-black bg-black hover:bg-orange-400 hover:border-orange-400 py-2 px-12 md:py-3 rounded-full md:w-80 text-white"
           ref={refFilterButton}
         >
           Filter by rates

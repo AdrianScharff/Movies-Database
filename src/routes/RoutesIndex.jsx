@@ -7,6 +7,8 @@ import About from "../pages/About/About";
 import Contact from "../pages/Contact/Contact";
 import MovieDetail from "../pages/MovieDetail/MovieDetail";
 import Error404 from "../pages/Error404/Error404";
+import MoviesByRate from "../pages/MoviesByRate/MoviesByRate";
+import MoviesBySearch from "../pages/MoviesBySearch/MoviesBySearch";
 
 const Router = () => (
   <Routes>
@@ -18,6 +20,14 @@ const Router = () => (
       </Route>
 
       <Route path="contact" element={<Contact />} />
+
+      <Route path="moviesbyrate/" element={<MoviesByRate />}>
+        <Route path=":rateAsString" element={<MoviesByRate />} />
+      </Route>
+
+      <Route path="moviesbysearch/" element={<MoviesBySearch />}>
+        <Route path=":text" element={<MoviesBySearch />} />
+      </Route>
 
       <Route path="movie/" element={<MovieDetail />}>
         <Route path=":id" element={<MovieDetail />} />

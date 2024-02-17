@@ -9,7 +9,8 @@ const fetchMoviesByRate = async (rate) => {
         const noRepeatedMovies = removeDuplicates(data)
         if (rate) {
             const moviesByRate = noRepeatedMovies.filter(movie => Math.floor(movie.vote_average) === rate)
-            console.log(rate);
+            console.log(`This is fetchMoviesByRate funcion, rate: ${rate}`);
+            console.log('This is fetchMoviesByRate funcion, moviesByRate:');
             console.log(moviesByRate);
             return moviesByRate
         }
@@ -31,6 +32,8 @@ const fetchMoviesBySearch = async (word) => {
                 const normalizedTitle = m.title.normalize('NFD').toLowerCase();
                 return normalizedTitle.startsWith(normalizedWord);
             });
+            console.log(`This is fetchMoviesBySearch funcion, word: ${word}`);
+            console.log('This is fetchMoviesBySearch funcion, movieMatches:');
             console.log(movieMatches);
             return movieMatches
         }

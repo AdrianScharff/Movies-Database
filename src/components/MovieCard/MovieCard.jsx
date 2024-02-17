@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
-const MovieCard = ({ id, title, image, voteAverage }) => {
+const MovieCard = ({ id, title, image, voteAverage, path }) => {
   return (
     <div className="border border-black p-2 rounded-lg flex md:flex-col items-center h-[10rem] md:h-fit">
       <img
@@ -13,9 +13,12 @@ const MovieCard = ({ id, title, image, voteAverage }) => {
         <p className="font-semibold">{title}</p>
         <p className="flex flex-col justify-center">{voteAverage}</p>
         <div className="flex flex-col justify-end items-center">
-          <button className="py-1 px-2 rounded-lg bg-orange-400 hover:bg-orange-200 w-fit">
-            <NavLink to={`movie/${id}`}>See details</NavLink>
-          </button>
+          <NavLink
+            to={path + id}
+            className="py-1 px-2 rounded-lg bg-orange-400 hover:bg-orange-200 w-fit"
+          >
+            See details
+          </NavLink>
         </div>
       </div>
     </div>

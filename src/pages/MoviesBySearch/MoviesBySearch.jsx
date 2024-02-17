@@ -1,37 +1,39 @@
 import React, { useEffect, useState } from "react";
-import Filter from "./Filter";
 import MoviesContainer from "../../components/MoviesContainer/MoviesContainer";
 import MovieCard from "../../components/MovieCard/MovieCard";
-import { fetchMoviesByRate } from "../../services/moviesServices";
+import { fetchMoviesBySearch } from "../../services/moviesServices";
+import Filter from "../Home/Filter";
+import { useParams } from "react-router-dom";
 
-const Home = () => {
-  const [movies, setMovies] = useState([]);
+const MoviesBySearch = () => {
+  const [moviesBySearch, setMoviesBySearch] = useState([]);
+  const { text } = useParams();
 
-  const getAllMovies = async (value) => {
+  const getMoviesBySearch = async (word) => {
     try {
-      const fetchedMovies = await fetchMoviesByRate(value);
-      setMovies(fetchedMovies);
+      const fetchedMovies = await fetchMoviesBySearch(word);
+      setMoviesBySearch(fetchedMovies);
     } catch (error) {
       console.error(error);
     }
   };
 
   useEffect(() => {
-    getAllMovies(null);
-  }, []);
+    getMoviesBySearch(text);
+  }, [text]);
 
   return (
     <>
       <Filter />
       <MoviesContainer>
-        {movies.map((movie) => (
+        {moviesBySearch.map((movie) => (
           <MovieCard
             key={movie.id}
             id={movie.id}
             image={movie.poster_path}
             title={movie.title}
             voteAverage={movie.vote_average}
-            path={"movie/"}
+            path={"../movie/"}
           />
         ))}
       </MoviesContainer>
@@ -39,4 +41,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default MoviesBySearch;
