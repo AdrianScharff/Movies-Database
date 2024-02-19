@@ -10,7 +10,9 @@ _italicized text_
 
 ## `const test = document.getElementByid('id')`
 
---- The above line is an horizontal rule
+---
+
+The above line is an horizontal rule
 
 [This is a link with spaces](https://www.google.com)
 
