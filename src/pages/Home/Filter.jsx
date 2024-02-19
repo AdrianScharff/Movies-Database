@@ -45,7 +45,7 @@ const Filter = () => {
           value={text}
           onChange={(e) => setText(e.target.value)}
         />
-        <button className="border-2 border-black bg-black hover:bg-orange-400 hover:border-black hover:border-s-orange-400 p-2 pr-4 md:py-3 rounded-r-full text-white">
+        <button className="border-2 border-black bg-black hover:bg-orange-400 hover:border-orange-400 hover:border-s-orange-400 p-2 pr-4 md:py-3 rounded-r-full text-white">
           Search
         </button>
       </form>
