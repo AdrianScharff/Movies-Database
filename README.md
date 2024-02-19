@@ -8,6 +8,8 @@
 <h3><b>Movie Database</b></h3>
 </div>
 
+<!-- TABLE OF CONTENTS -->
+
 # 📗 Table of Contents
 
 - [📖 About the Project](#about-project)
@@ -40,8 +42,6 @@
 
 ### Tech Stack <a name="tech-stack"></a>
 
-> Describe the tech stack and include only the relevant sections that apply to your project.
-
 <details>
   <summary>Client</summary>
   <ul>
@@ -54,24 +54,15 @@
   <ul>
     <li><a href="https://expressjs.com/">Express.js</a></li>
   </ul>
-</details>
-
-<details>
-<summary>Database</summary>
-  <ul>
-    <li><a href="https://www.postgresql.org/">PostgreSQL</a></li>
-  </ul>
-</details>
+  </details>
 
 <!-- Features -->
 
 ### Key Features <a name="key-features"></a>
 
-> Describe between 1-3 key features of the application.
-
-- **[key_feature_1]**
-- **[key_feature_2]**
-- **[key_feature_3]**
+- **Movies displayed from the express.js API**
+- **Search and filtering options for the movies**
+- **Movie details available for every movie**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -79,9 +70,7 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-> Add a link to your deployed project.
-
-- [Live Demo Link](https://google.com)
+- [Live Demo Link](https://github.com/AdrianScharff?tab=repositories)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -89,83 +78,48 @@
 
 ## 💻 Getting Started <a name="getting-started"></a>
 
-> Describe how a new developer could make use of your project.
-
 To get a local copy up and running, follow these steps.
 
 ### Prerequisites
 
 In order to run this project you need:
 
-<!--
-Example command:
-
-```sh
- gem install rails
-```
- -->
+- Have node installed with a version 18 or greater. Check node docs [here](https://nodejs.org/en)
+- Have git installed. You can install git from [here](https://git-scm.com/)
 
 ### Setup
 
 Clone this repository to your desired folder:
 
-<!--
-Example commands:
-
 ```sh
   cd my-folder
-  git clone git@github.com:myaccount/my-project.git
+  git clone https://github.com/AdrianScharff/Movies-Database.git
 ```
---->
 
 ### Install
 
-Install this project with:
-
-<!--
-Example command:
+Install this project's dependencies with:
 
 ```sh
   cd my-project
-  gem install
+  node install
 ```
---->
 
 ### Usage
 
 To run the project, execute the following command:
 
-<!--
-Example command:
-
 ```sh
-  rails server
+  npm run dev
 ```
---->
-
-### Run tests
-
-To run tests, run the following command:
-
-<!--
-Example command:
-
-```sh
-  bin/rails test test/models/article_test.rb
-```
---->
 
 ### Deployment
 
 You can deploy this project using:
 
-<!--
-Example:
-
 ```sh
 
 ```
- -->
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -173,19 +127,11 @@ Example:
 
 ## 👥 Authors <a name="authors"></a>
 
-> Mention all of the collaborators of this project.
+👤 **Adrian Scharff**
 
-👤 **Author1**
-
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
-
-👤 **Author2**
-
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@AdrianScharff](https://github.com/AdrianScharff)
+- Twitter: [@AdrianCoding](https://twitter.com/AdrianCoding)
+- LinkedIn: [Adrian Juarez](linkedin.com/in/adrián-juárez-17a51b263)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -193,11 +139,9 @@ Example:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-> Describe 1 - 3 features you will add to the project.
-
-- [ ] **[new_feature_1]**
-- [ ] **[new_feature_2]**
-- [ ] **[new_feature_3]**
+- **Filter by popularity**
+- **Allow Multifiltering**
+- **Pagination of the results**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -207,7 +151,7 @@ Example:
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](../../issues/).
+Feel free to check the [issues page](https://github.com/AdrianScharff/Movies-Database/issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -215,9 +159,7 @@ Feel free to check the [issues page](../../issues/).
 
 ## ⭐️ Show your support <a name="support"></a>
 
-> Write a message to encourage readers to support your project
-
-If you like this project...
+If you like this project please rate it in our [Gitub page](https://github.com/AdrianScharff), that motivates us to keep giving our best 🙂
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -225,25 +167,21 @@ If you like this project...
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-> Give credit to everyone who inspired your codebase.
-
-I would like to thank...
+I would like to thank Dev.F for providing the structure to build this project and to TMDB for making their data available for us.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- FAQ (optional) -->
 
-## ❓ FAQ (OPTIONAL) <a name="faq"></a>
+## ❓ FAQ <a name="faq"></a>
 
-> Add at least 2 questions new developers would ask when they decide to use your project.
+- **Whats the purpose of this project?**
 
-- **[Question_1]**
+  - Create a movie database with the details of the top rated, most popular and now playing movies.
 
-  - [Answer_1]
+- **Who are the target users of this project?**
 
-- **[Question_2]**
-
-  - [Answer_2]
+  - Any person who is curious about the current best movies
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -251,8 +189,6 @@ I would like to thank...
 
 ## 📝 License <a name="license"></a>
 
-This project is [MIT](./LICENSE) licensed.
-
-_NOTE: we recommend using the [MIT license](https://choosealicense.com/licenses/mit/) - you can set it up quickly by [using templates available on GitHub](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-license-to-a-repository). You can also use [any other license](https://choosealicense.com/licenses/) if you wish._
+This project is [MIT](./MIT.md) licensed.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
