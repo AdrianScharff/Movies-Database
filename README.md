@@ -4,8 +4,6 @@
 <img src="./src/assets/ASLogoWhiteBg.png" alt="logo" width="140" height="auto" />
 
 <br />
-
-<h3><b>Movie Database</b></h3>
 </div>
 
 <!-- TABLE OF CONTENTS -->

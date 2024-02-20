@@ -12,7 +12,7 @@ const Rates = forwardRef((props, ref) => {
 
   return (
     <div
-      className="border-x border-b border-gray-400 rounded-b-lg flex flex-col gap-3 bg-black p-4 w-4/5 md:w-5/6 absolute top-10 md:top-[52px] font-medium"
+      className="border-x border-b border-gray-400 rounded-b-lg flex flex-col gap-3 bg-black p-4 w-4/5 md:w-5/6 absolute top-[44px] md:top-[52px] font-medium"
       ref={ref}
     >
       {rates.map((rate) => (

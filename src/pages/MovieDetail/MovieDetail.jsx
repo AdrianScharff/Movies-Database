@@ -3,10 +3,16 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { getMovieById } from "../../services/moviesServices";
 import getLanguage from "../../services/getLanguage";
+import loadingImg from "../../assets/loadingImg.png";
 
 const MovieDetail = () => {
   const { id } = useParams();
   const [movie, setMovie] = useState({});
+  const [imageLoaded, setImageLoaded] = useState(false);
+
+  const handleImageLoad = () => {
+    setImageLoaded(true);
+  };
 
   const getMovieData = async () => {
     const fetchedMovie = await getMovieById(id);
@@ -20,11 +26,17 @@ const MovieDetail = () => {
   return (
     <div className="flex flex-col justify-center mb-8 mt-[96px] md:py-10 md:px-20 gap-6">
       <div className="flex flex-col md:grid grid-cols-[15fr_12fr] gap-4 md:gap-9">
-        <img
-          src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`}
-          alt={`image of ${movie.title}`}
-          className="w-full"
-        />
+        <div>
+          {!imageLoaded && (
+            <img src={loadingImg} alt="loading img" className="w-full" />
+          )}
+          <img
+            src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`}
+            alt={`image of ${movie.title}`}
+            className={`w-full ${imageLoaded ? "block" : "hidden"}`}
+            onLoad={handleImageLoad}
+          />
+        </div>
         <div className="flex flex-col items-center md:items-start md:justify-evenly gap-6">
           <p className="px-5 md:px-0 font-bold text-5xl">{movie.title}</p>
           <p className="px-5 md:px-0 md:text-3xl">{movie.overview}</p>
