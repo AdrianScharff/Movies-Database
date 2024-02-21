@@ -4,10 +4,10 @@ import { NavLink } from "react-router-dom";
 
 const Popularities = forwardRef((props, ref) => {
   const popularities = ["0-40", "40-120", "120-500", "500-1000", "1000 +"];
-  const { setShowPopularity } = useContext(PopularityContext);
+  const { setShowPopularities } = useContext(PopularityContext);
 
   const togglePopularities = () => {
-    setShowPopularity((prevShowPopularity) => !prevShowPopularity);
+    setShowPopularities((prevShowPopularity) => !prevShowPopularity);
   };
 
   return (
