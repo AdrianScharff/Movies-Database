@@ -1,6 +1,6 @@
 import axios from 'axios'
 import removeDuplicates from './removeDuplicates'
-const baseUrl = 'http://localhost:3700/'
+const baseUrl = 'https://movie-database-api-amber.vercel.app/'
 
 const fetchMoviesBySearch = async (word) => {
     try {
