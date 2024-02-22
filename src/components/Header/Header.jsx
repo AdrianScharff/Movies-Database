@@ -49,7 +49,9 @@ const Header = () => {
             <NavLink
               to="/"
               className={({ isActive }) =>
-                isActive ? "text-orange-400" : "text-white"
+                isActive
+                  ? "text-orange-400 md:hover:underline"
+                  : "text-white md:hover:underline"
               }
               onClick={toggleMenu}
             >
@@ -58,7 +60,9 @@ const Header = () => {
             <NavLink
               to="/about"
               className={({ isActive }) =>
-                isActive ? "text-orange-400" : "text-white"
+                isActive
+                  ? "text-orange-400 md:hover:underline"
+                  : "text-white md:hover:underline"
               }
               onClick={toggleMenu}
             >
@@ -67,7 +71,9 @@ const Header = () => {
             <NavLink
               to="/contact"
               className={({ isActive }) =>
-                isActive ? "text-orange-400" : "text-white"
+                isActive
+                  ? "text-orange-400 md:hover:underline"
+                  : "text-white md:hover:underline"
               }
               onClick={toggleMenu}
             >
