@@ -30,7 +30,7 @@ const Header = () => {
   }, []);
 
   return (
-    <header className="fixed w-full shadow-md bg-red-200 top-0 z-[20]">
+    <header className="fixed w-full shadow-md bg-black top-0 z-[20]">
       <div className="flex justify-between items-center  px-10 py-5">
         <Link to="/">
           <img
