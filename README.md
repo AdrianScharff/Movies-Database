@@ -68,7 +68,7 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo Link](https://github.com/AdrianScharff?tab=repositories)
+- [Live Demo Link](https://moviesdatabaseadrian.netlify.app/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -116,8 +116,10 @@ To run the project, execute the following command:
 You can deploy this project using:
 
 ```sh
-
+npm run build
 ```
+
+And then drag and drop the `dist` folder to the deploys section in your preferred hosting site.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
