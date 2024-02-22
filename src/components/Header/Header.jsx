@@ -50,8 +50,8 @@ const Header = () => {
               to="/"
               className={({ isActive }) =>
                 isActive
-                  ? "text-orange-400 md:hover:underline"
-                  : "text-white md:hover:underline"
+                  ? "text-orange-400 md:hover:underline decoration-2 underline-offset-8 decoration-orange-400"
+                  : "text-white md:hover:underline decoration-2 underline-offset-8 decoration-white"
               }
               onClick={toggleMenu}
             >
@@ -61,8 +61,8 @@ const Header = () => {
               to="/about"
               className={({ isActive }) =>
                 isActive
-                  ? "text-orange-400 md:hover:underline"
-                  : "text-white md:hover:underline"
+                  ? "text-orange-400 md:hover:underline decoration-2 underline-offset-8 decoration-orange-400"
+                  : "text-white md:hover:underline decoration-2 underline-offset-8 decoration-white"
               }
               onClick={toggleMenu}
             >
@@ -72,8 +72,8 @@ const Header = () => {
               to="/contact"
               className={({ isActive }) =>
                 isActive
-                  ? "text-orange-400 md:hover:underline"
-                  : "text-white md:hover:underline"
+                  ? "text-orange-400 md:hover:underline decoration-2 underline-offset-8 decoration-orange-400"
+                  : "text-white md:hover:underline decoration-2 underline-offset-8 decoration-white"
               }
               onClick={toggleMenu}
             >
