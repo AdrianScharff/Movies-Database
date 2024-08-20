@@ -22,7 +22,7 @@ const Contact = () => {
         >
           <div className="font-bold">By Github</div>
           <img
-            src="https://cdn1.iconfinder.com/data/icons/logotypes/32/circle-linkedin-512.png"
+            src="https://cdn4.iconfinder.com/data/icons/iconsimple-logotypes/512/github-512.png"
             alt=""
             className="w-3/5"
           />
@@ -33,7 +33,7 @@ const Contact = () => {
         >
           <div className="font-bold">By Linkedin</div>
           <img
-            src="https://static-00.iconduck.com/assets.00/linkedin-icon-1024x1024-net2o24e.png"
+            src="https://cdn1.iconfinder.com/data/icons/logotypes/32/circle-linkedin-512.png"
             alt=""
             className="w-3/5"
           />
