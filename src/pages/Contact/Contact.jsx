@@ -1,5 +1,3 @@
-import React from "react";
-
 const Contact = () => {
   return (
     <div className="mt-[96px] flex flex-col items-center gap-14 py-14">
@@ -24,7 +22,7 @@ const Contact = () => {
         >
           <div className="font-bold">By Github</div>
           <img
-            src="https://cdn4.iconfinder.com/data/icons/iconsimple-logotypes/512/github-512.png"
+            src="https://cdn1.iconfinder.com/data/icons/logotypes/32/circle-linkedin-512.png"
             alt=""
             className="w-3/5"
           />
